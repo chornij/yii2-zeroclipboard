@@ -1,0 +1,24 @@
+{
+  "name": "chornij/yii2-zeroclipboard",
+  "description": "The ZeroClipboard library provides an easy way to copy text to the clipboard using an invisible Adobe Flash movie and a JavaScript interface.",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Igor Chornij",
+      "email": "chornij.i.v@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "chornij\\zeroclipboard\\": ""
+    }
+  }
+}
