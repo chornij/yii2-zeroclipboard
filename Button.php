@@ -98,7 +98,7 @@ class Button extends Widget
             $this->getView()->registerJs('client' . $this->id . ".on('aftercopy', function(event) {
                 var oldLabel = $('#" . $this->id . "').html();
 
-                $('#" . $this->id . "').html('" . $this->enableAftercopyLabel . "');
+                $('#" . $this->id . "').html('" . $this->afterCopyLabel . "');
 
                 setTimeout(function() {
                     $('#" . $this->id . "').html(oldLabel);
