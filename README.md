@@ -32,4 +32,5 @@ Once the extension is installed, simply use it in your code by  :
     'label' => '<span class="glyphicon glyphicon-copy"></span> ' . \Yii::t('app', 'Copy'),
     'encodeLabel' => false,
     'text' => "$('.copy-selector').text()",
-]) ?>```
+]) ?>
+```
