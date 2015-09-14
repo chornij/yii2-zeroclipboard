@@ -83,11 +83,12 @@ class Button extends Widget
     {
         ZeroClipboardAsset::register($this->getView());
 
-        $this->getView()->registerJs('var client' . $this->id . ';', View::POS_HEAD);
+        $clipboardVar = 'client' . preg_replace('/[^0-9a-zA-Z_$]/', '_', $this->id);
+        $this->getView()->registerJs('var ' . $clipboardVar . ';', View::POS_HEAD);
         $this->getView()->registerJs(
-            'client' . $this->id . " = new ZeroClipboard($('#" . $this->id . "'));
+            $clipboardVar . " = new ZeroClipboard($('#" . $this->id . "'));
 
-            client" . $this->id . ".on('copy', function (event) {
+            " . $clipboardVar . ".on('copy', function (event) {
                 var clipboard = event.clipboardData;
 
                 clipboard.setData('text/plain', " . $this->text . ');
@@ -95,7 +96,7 @@ class Button extends Widget
         );
 
         if ($this->enableAftercopy) {
-            $this->getView()->registerJs('client' . $this->id . ".on('aftercopy', function(event) {
+            $this->getView()->registerJs($clipboardVar . ".on('aftercopy', function(event) {
                 var oldLabel = $('#" . $this->id . "').html();
 
                 $('#" . $this->id . "').html('" . $this->afterCopyLabel . "');
